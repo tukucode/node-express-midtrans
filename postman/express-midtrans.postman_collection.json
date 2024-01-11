@@ -1,0 +1,70 @@
+{
+	"info": {
+		"_postman_id": "dd1ff63d-180e-4309-93fd-532ba8578418",
+		"name": "express-midtrans",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28567299"
+	},
+	"item": [
+		{
+			"name": "simple transaction [snap]",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"transaction_details\": {\n\t\t\"order_id\": \"tokosidia-123457\",\n\t\t\"gross_amount\": 21000\n\t},\n\t\"item_details\": [\n\t\t{\n\t\t\t\"id\": \"ITEM1\",\n\t\t\t\"price\": 10000,\n\t\t\t\"quantity\": 2,\n\t\t\t\"name\": \"Motor ku\"\n\t\t},\n\t\t{\n\t\t\t\"id\": \"ITEM2\",\n\t\t\t\"price\": 1000,\n\t\t\t\"quantity\": 1,\n\t\t\t\"name\": \"Kacang\"\n\t\t}\n\t],\n\t\"customer_details\": {\n\t\t\"first_name\": \"Tomi\",\n\t\t\"last_name\": \"\",\n\t\t\"email\": \"test@example.com\",\n\t\t\"phone\": \"+628123456\"\n\t}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/v1/simple-checkout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"v1",
+						"simple-checkout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "transaction [core api]",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"payment_type\": \"bank_transfer\",\n\t\"bank_transfer\": {\n\t\t\"bank\": \"bca\"\n\t},\n\t\"transaction_details\": {\n\t\t\"order_id\": \"tokosidia-1234667\",\n\t\t\"gross_amount\": 10000\n\t},\n\t\"item_details\": [\n\t\t{\n\t\t\t\"id\": \"ITEM1\",\n\t\t\t\"price\": 10000,\n\t\t\t\"quantity\": 1,\n\t\t\t\"name\": \"Motor ku\"\n\t\t}\n\t],\n\t\"customer_details\": {\n\t\t\"first_name\": \"putra\",\n\t\t\"last_name\": \"\",\n\t\t\"email\": \"putra@example.com\",\n\t\t\"phone\": \"+62812345678\"\n\t}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/v1/checkout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"v1",
+						"checkout"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
